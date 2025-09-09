@@ -41,6 +41,6 @@ if __name__ == '__main__':
     # Prueba clave automovil
     auto3= Automovil('Honda','Accord',2)
     if auto3.es_deportivo():
-        print (auto3.mostrar_info + '\n(Auto deportivo)')
+        print (auto3.mostrar_info() + '\n(Auto deportivo)')
     else:
-        print (auto3.mostrar_info + '\n(Auto sedan)')
+        print (auto3.mostrar_info() + '\n(Auto sedan)')
