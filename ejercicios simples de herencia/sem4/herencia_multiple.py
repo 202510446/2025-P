@@ -1,44 +1,42 @@
-class vehiculo:
+class Vehiculo:
     velocidad = 0
     nombre = ""
-
-class Terrestre(vehiculo):
+class Terrestre(Vehiculo):
     def avanzar():
-        'vehiculo terrestre avanzando...'
-    
-class Aereo(vehiculo):
-    altura_max= 0
+        'vehiculo terrestre avanzando--'
+class Aereo(Vehiculo):
+    altura_max = 0
     def __init__(self, altura):
-        self-altura_max = altura
-    def volar():
-        'vec¿hiculo aereo volando...'
+        self.altura_max = altura
+    def volar(self):
+        return 'vehiculo aereo volando...'
 class Camara:
-    cargo_disponible = 0
-
+    carga_disponible = 0
 class Digital(Camara):
     resolucion = 0
-    def __init__(self,resolucion):
-        self.resolucion = resolucion
-    def descargar_archios():
-        return 'archivo descargado de camara digital...'
+    def __init__(self, res):
+        self.resolucion = res
+    def descargar_archivos(self):
+        return 'archivos descargados de camara digital...'
 class Analogica(Camara):
-    numero_tomas=0
-    def imprimir():
-        return 'imprimiendo'
-
+    numero_tomas = 0
+    def imprimir(self):
+        return 'imprimiendo...'
+    
 class Dron(Aereo, Digital):
-    def __init__(self,altura,resolucion,alcance):
+    def __init__(self, altura, resolucion, alcance):
         super().__init__(altura)
-        Digital.__init__(self,resolucion)
+        Digital.__init__(self, resolucion)
         self.alcance = 2000
         
     def volar(self):
-        return super().volar(self) + '\n' + 'El dron esta volnado'
+        return str(super().volar())  + '\nEl dron esta volando'
     
-    def descargar_archios(self):
-        return Digital.descargar_archios() + '\n' + 'El dron esta descargando archivos...'
+    def descargar_archivos(self):
+        return Digital.descargar_archivos(self)  + '\nEl dron esta descargando archivos ...'
     
 if __name__ == '__main__':
-    d1 = Dron(500, 81292, 1750)
-    print(d1.volar())
-    print(d1.descargar_archios())
+    d1 = Dron(500, 8192, 1750)
+    print (d1.volar())
+    print (d1.descargar_archivos())
+        
