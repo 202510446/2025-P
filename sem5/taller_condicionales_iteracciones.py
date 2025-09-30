@@ -1,197 +1,191 @@
 """
-    obejtivo: Practicar con estructuras condicionales e iterativa
-    fecha: 23-09-2025
+    Objetivo:   Practicar con estructuras condicionales e iterativa
+    Fecha:      23-09-2025    
 """
+import random
 #--------------#
 # Ejercicio 01 #
 #--------------#
 def ejercicio_01():
     # Pedir un numero
     try:
-        numero = int(input('Ingrese un numero a comparar: '))
+        numero = int(input('Ingrese el número a comparar: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devolver el valor
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
     # Comparar si es mayor a 0
     if numero > 0:
-        return 'El numero es positivo'
+        return 'El número es positivo'
     else:
-        return 'El numero es negativo'
-    # delvolver el mensaje
-#--------------#
+        return 'el número es negativo o cero'
+    # devolver el mensaje
+#--------------#1
 # Ejercicio 02 #
 #--------------#
 def ejercicio_02():
     try:
-        num1 = int(input('Ingrese el numero 1 a comparar: '))
-        num2 = int(input('Ingrese el numero 2 a comparar: '))
+        num1 = int(input('Ingrese el número1 a comparar: '))
+        num2 = int(input('Ingrese el número2 a comparar: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico'
+        return 'Debe ingresar un valor numérico'
     if num1 > num2:
-        return f'El numero {num1} es mayor que el numero {num2}'
+        return f'El número {num1} es mayor que el número {num2}'
     elif num1 < num2:
-        return f'El numero {num2} es mayor que el numero {num1}'
+        return f'El número {num2} es mayor que el número {num1}'
     else:
-        return 'Los dos numeros tienen el mismo valor'
-    
-#--------------#
-# ejercicio 03 #
+        return 'Los 2 números tienen el mismo valor'
+#--------------#1
+# Ejercicio 03 #
 #--------------#
 def ejercicio_03():
-    #pedir un numero
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese un numero para ver su tabla de multiplicar: '))
+        numero = int(input('Ingrese el número: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
-    #bloque iterativo para multiplicar
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
+    # bloque iterativo para multiplicar
     mensaje = ''
     for nro in range(1, 13):
-        mensaje += f'{numero} X {nro} = {numero * nro}\n'
+        mensaje += f'{numero} x {nro} = {numero * nro}\n'
     return mensaje
-#--------------#
-# ejercicio 06 #
+#--------------#1
+# Ejercicio 06 #
 #--------------#
 def ejercicio_06():
-    #pedir un numero
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese un numero: '))
+        numero = int(input('Ingrese el número: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor       
     digitos = 0
     if numero == 0:
-        return 'El numero tiene 1 digito'
+        return 'Tiene 1 dígito'
     while numero != 0:
-        numero = numero // 10  # division entera
+        numero = numero // 10
         digitos += 1
-    return f'El numero tiene {digitos} digitos'
-
-#--------------#
-# ejercicio 08 #
+    return f'El número tiene {digitos} digitos'
+#--------------#1
+# Ejercicio 08 #
 #--------------#
 def ejercicio_08():
-    #pedir un numero
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese un numero:'))
+        numero = int(input('Ingrese el número: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
-    #es cero
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
+    # Es cero
     if numero == 0:
-        return 'El factorial de {numero} es 1'
+        return f'El factorial de {numero} es 1'
     fact = 1
-    i=1
-    while i<= numero:
-        factorial *=i
+    i = 1
+    while i <= numero:
+        fact *= i
         i += 1
     return f'El factorial de {numero} es {fact}'
-
+#--------------#1
+# Ejercicio 09 #
 #--------------#
-# ejercicio 09 #
-#--------------#
-
 def ejercicio_09():
-    #pedir un numero
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese un numero para verificar si es primo: '))
+        numero = int(input('Ingrese para verficar si es primo: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
     es_primo = True
     if numero <= 1:
-        return 'El numero no es primo(0 o es negativo)'
+        return 'El número no es primo (0 o negativo)'
     for i in range(2, numero):
-        if numero % i == 0:   # el residuo es dividir numero entre i es cero
-            return 'El numero no es primo'
-    return 'El numero es primo'
+        if numero % i == 0:   # El residuo de dividr numero entre i es cero
+            return 'El número no es primo'
+    return 'El número es primo'
 
-#--------------#
-# ejercicio 10 #
+#--------------#1
+# Ejercicio 10 #
 #--------------#
 def ejercicio_10():
-    #pedir un numero
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese cuantos terminos de la serie de fibonacci desea ver: '))
+        numero = int(input('Ingrese cuantos términos de la serie Fibonnaci se deben mostrar: '))
     except ValueError:
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
-    primero,segundo = 0,1
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
+    primero, segundo = 0, 1
     contador = 0
     linea = ''
     while contador < numero:
-        linea += '' + str(primero)
-        primero ,segundo = segundo, primero + segundo
+        linea += ' ' + str(primero)
+        primero, segundo = segundo, primero + segundo
         contador += 1
     return linea
-
+#--------------#1
+# Ejercicio 12 #
 #--------------#
-# ejercicio 12 #
-#--------------#
-def ejercicio_12():
-    #pedir un numero
+def ejercicio_12(): 
+    # Pedir un numero
     try:
-        numero = int(input('Ingrese el numero del dia de la semana: '))
-    except ValueError:  
-        return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
+        numero = int(input('Ingrese el número de día de la semana: '))
+    except ValueError:
+        return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor
     match numero:
         case 1:
             return 'Lunes'
         case 2:
             return 'Martes'
         case 3:
-            return 'Miercoles'
+            return 'Miércoles'
         case 4:
             return 'Jueves'
         case 5:
             return 'Viernes'
         case 6:
-            return 'Sabado'
+            return 'Sábado'
         case 7:
             return 'Domingo'
         case _:
-            return 'Debe ingresar un numero entre 1 y 7'
-
-
+            return 'Debe ingresar un número entre 1 y 7'
+#--------------#1
+# Ejercicio 11 #
 #--------------#
-# ejercicio 11 #
-#--------------#
-def ejercicio_11():
-    #generar un numero aleatorio entre 1 y 20
-    secreto = random.randint(1,20)
-    intentos = 0
+def ejercicio_11(): 
+    # Generar un numero aleatorio
+    secreto = random.randint(1, 20)
+    intento = 0
     adivinado = False
-    
+
     while not adivinado:
-        #pedir un numero
+        # Pedir un numero
         try:
-            numero = int(input('Adivine el numero a a divinar: '))
+            numero = int(input('Ingrese el número a adivinar: '))
         except ValueError:
-            return 'Debe ingresar un valor numerico' # finalizar la funcion y devuelve el valor
-        intentos += 1
+            return 'Debe ingresar un valor numérico'  # finaliza la función y devuelve el valor 
+        intento += 1
         if numero == secreto:
-            print (f'Correcto!!, adivinaste en {intentos} intentos')
+            print (f'Correcto!!, adivinaste en {intento} intentos')
             adivinado = True
         elif numero < secreto:
             print('Demasiado bajo')
-        elif:
+        else:
             print('Demasiado alto')
-#--------------#
-#Menu Principal#
-#--------------#
+                            
+#----------------#
+# Menu principal #
+#----------------#
 def main():
     while True:
-        print('\n=== condicionales e Iteracciones ===')
-        print('1. Numero positivo o negativo')
-        print('2. Mayor de dos numeros')
-        print('3. tabla de multiplicar')
-        print('6. ejer 6')
+        print('\n=== condicionales e Iteraciones ===')
+        print('1. Número positivo o negativo')
+        print('2. Mayor de dos números')
+        print('3. Tabla de multiplicar')
+        print('6. Dígitos de un número')
         print('8. Factorial de un numero')
-        print('9. Numero primo')
-        print('10. Ejercicio 10')
-        print('11. Ejercicio 11')
-        print('12. Dia de la semana')
-        print('0. Salir')
+        print('9. Número primo')
+        print('10. Serie Fibonacci')
+        print('12. Día de la semana')
+        print('0. Salir del sistema')
         
-        # Aceptar un numero por teclado
-        opcion = int(input('Seleccione una opcion: '))
+        # Aceptar un número por teclado
+        opcion = int(input('Seleccione una opción: '))
         
         if opcion == 1:
-            print(ejercicio_01()) # imprime el valor que retorna
+            print(ejercicio_01())   # Imprime el valor que retorna
         elif opcion == 2:
             print(ejercicio_02())
         elif opcion == 3:
@@ -205,14 +199,14 @@ def main():
         elif opcion == 10:
             print(ejercicio_10())
         elif opcion == 11:
-            print(ejercicio_11())
+            ejercicio_11()
         elif opcion == 12:
             print(ejercicio_12())
         elif opcion == 0:
             print('gracias por usar el sistema')
             break
         else:
-            print('Opcion incorrecta, intente de nuevo')
+            print('opción incorrecta, intente de nuevo')
 
 if __name__ == '__main__':
-    main()
+    main() 
